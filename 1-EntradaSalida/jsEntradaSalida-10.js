@@ -1,5 +1,5 @@
 /* Federico Nahuel Papini, DIV H
-Ejercicio E/S 10:
+Ejercicio E/S 10 BIS:
 
 Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
@@ -10,9 +10,12 @@ function mostrarAumento()
 	let importe;
 	let porcentaje;
 	let descuento;
+	let ingresoporcentaje;
 
+	
+	ingresoporcentaje=prompt("Ingrese Porcentaje a restar");
 	importe= parseInt(document.getElementById("txtIdImporte").value);
-	porcentaje = importe * 25/100;
+	porcentaje = importe * ingresoporcentaje/100;
 	descuento = importe - porcentaje;
 
 	document.getElementById("txtIdResultado").value =descuento;
