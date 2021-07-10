@@ -13,7 +13,7 @@ function FahrenheitCentigrados ()
   temperaturaIngresada= document.getElementById("txtIdTemperatura").value;
   temperaturaIngresada=parseFloat(temperaturaIngresada);
   centigrados= (temperaturaIngresada-32)*5/9;
-  alert(temperaturaIngresada + "Fahrenheit son " + centigrados + " centigrados.");
+  alert(temperaturaIngresada + "Fahrenheit son " + centigrados.toFixed(2) + " centigrados.");
 
   document.getElementById("txtIdTemperatura").value= "";
 
@@ -27,7 +27,7 @@ function CentigradosFahrenheit ()
     temperaturaIngresada=document.getElementById("txtIdTemperatura").value;
     temperaturaIngresada=parseFloat(temperaturaIngresada);
     fahrenheit = (temperaturaIngresada * 9/5) +32;
-    alert(temperaturaIngresada + " centigrados son " + fahrenheit + " Fahrenheit.");
+    alert(temperaturaIngresada + " centigrados son " + fahrenheit.toFixed(2) + " Fahrenheit.");
 
     document.getElementById("txtIdTemperatura").value = "";
 }
