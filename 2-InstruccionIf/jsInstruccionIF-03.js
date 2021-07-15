@@ -1,7 +1,11 @@
+/* PAPINI FEDERICO NAHUEL DIV H
+IF EJERCICIO 3:
+*/
 function mostrar()
 {
 	let edad;
-	edad = parseInt(document.getElementById("txtIdEdad").value);
+	edad = document.getElementById("txtIdEdad").value;
+	edad= parseInt(edad);
 
 	if(edad >= 18)
 	{
@@ -11,5 +15,5 @@ function mostrar()
 		alert("La persona es menor de edad ");
 	}
 
-	document.getElementById("txtIdEdad").value = " ";
+	document.getElementById("txtIdEdad").value = "";
 }//txtIdEdad

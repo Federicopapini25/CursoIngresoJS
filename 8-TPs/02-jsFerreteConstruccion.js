@@ -41,7 +41,7 @@ function Circulo ()
     alambre= circunferencia * 3;
     alert("Se necesita comprar: "+ alambre +" mts.");
 
-    document.getElementById("txtIdRadio").value =" ";
+    document.getElementById("txtIdRadio").value ="";
 
 }
     //txtIdRadio

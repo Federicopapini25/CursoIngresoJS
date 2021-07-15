@@ -1,19 +1,22 @@
+/*PAPINI FEDERICO NAHUEL DIV H:
+IF EJERCICIO 07: */
 function mostrar()
 {
-	let edad;
+	let edadIngresada;
 	let estadoCivil;
-	let soltero;
-	let casado;
-	let divorciado;
 	
-	edad = parseInt(document.getElementById("txtIdEdad").value);
-	estadocivil = document.getElementById("estadoCivil").value;
-	soltero = document.getElementById("estadoCivil").value ("Soltero");
-
-	if ( edad <= 18 && estadoCivil === Soltero)
+	
+	
+	edadIngresada = document.getElementById("txtIdEdad").value;
+	edadIngresada = parseInt(edadIngresada);
+	estadoCivil = document.getElementById("estadoCivil").value;
+	
+	if ( edadIngresada < 18  && estadoCivil != "Soltero" )
 	{
 		alert("Es muy pequeño para NO ser soltero. ");
 	}
+	
+		
 
 
 

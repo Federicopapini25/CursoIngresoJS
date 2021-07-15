@@ -1,7 +1,11 @@
+/*PAPINI FEDERICO NAHUEL DIV H
+IF EJERCICIO 02:
+*/
 function mostrar()
 {
 	let edad;
-	edad= parseInt(document.getElementById("txtIdEdad").value);
+	edad= document.getElementById("txtIdEdad").value;
+	edad= parseInt(edad);
 
 	if(edad >= 18)
 	{

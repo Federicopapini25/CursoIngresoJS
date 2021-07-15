@@ -1,11 +1,15 @@
+/*¨PAPINI FEDERICO NAHUEL DIV H
+IF EJERCICIO 1 */
+
 function mostrar()
 {
 	let edad;
-	edad= parseInt(document.getElementById("txtIdEdad").value);
+	edad= document.getElementById("txtIdEdad").value;
+	edad=parseInt(edad);
 	if(edad === 15)
 		{
 			alert("Niña bonita");
 
 		}
-			document.getElementById("txtIdEdad").value = " ";
-}//FIN DE LA FUNCIÓN
+			document.getElementById("txtIdEdad").value = "";
+}
