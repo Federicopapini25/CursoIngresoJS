@@ -1,4 +1,7 @@
-/*Al comenzar el juego generamos un número 
+/*PAPINI FEDERICO NAHUEL DIV H:
+TRABAJO PRACTICO NUM 5 (IF/SWITCH):
+
+Al comenzar el juego generamos un número 
 secreto del 1 al 100, en la pantalla del juego
  dispondremos de un cuadro de texto para ingresar
   un número y un botón “Verificar”, si el número 
@@ -12,6 +15,30 @@ var contadorIntentos;
 
 function comenzar()
 {
+  let ingresarNumero;
+  let numeroSecreto;
+  let intentos;
+
+  ingresarNumero= document.getElementById("txtIdNumero").value;
+  ingresarNumero = parseInt(ingresarNumero);
+  numeroSecreto = Math.floor(Math.random() * 100 + 1);
+  intentos = document.getElementById("txtIdIntentos").value;
+  
+  if(ingresarNumero == numeroSecreto)
+  {
+    alert("Usted es un ganador!!! Y en solo " + " intentos!");
+  }
+  else
+  {
+    if(ingresarNumero != numeroSecreto)
+    {
+      document.getElementById("txtIdIntentos").value =1;
+    }
+  }
+  
+
+
+
 	//Genero el número RANDOM entre 1 y 100
 	 
 		//alert(numeroSecreto );
@@ -24,3 +51,6 @@ function verificar()
 	
 	
 }
+
+//txtIdNumero Ingrese numero
+//txtIdIntentos Intentos

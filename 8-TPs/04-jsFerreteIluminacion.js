@@ -1,4 +1,7 @@
-/*4.	Para el departamento de iluminación:
+/*PAPINI FEDERICO NAHUEL DIV H
+TRABAJO PRACTICO 4 (IF/SWITCH):
+
+4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. -OK-
 
@@ -9,20 +12,106 @@ C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas
  si es de otra marca el descuento es del 20%. -OK-
 
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas”
- se hace un descuento del 10 % y si es de otra marca un 5%.
+ se hace un descuento del 10 % y si es de otra marca un 5%. -OK-
 
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del
  impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
+ txtIdCantidad
+ Marca
+ txtIdprecioDescuento
+
  */
 function CalcularPrecio () 
 {
-    let precioFinal;
+    let precioUnitario;
     let marca;
+    let cantidadLamparas;
+    let descuentoFinal;
+    let porcentajeIIBB;
+    let iibb;
+    let precioPorCantidad;
+
+    precioUnitario= 35;
+    precioUnitario=parseInt(precioUnitario);
+    marca= document.getElementById("Marca").value;
+    cantidadLamparas=document.getElementById("txtIdCantidad").value;
+    precioPorCantidad= cantidadLamparas*precioUnitario;
+    descuentoFinal= document.getElementById("txtIdprecioDescuento").value ;
+    descuentoFinal=parseFloat(descuentoFinal);
+    porcentajeIIBB=descuentoFinal -(descuentoFinal* 10/100);
+    porcentajeIIBB=parseFloat(porcentajeIIBB);
+    iibb = descuentoFinal + porcentajeIIBB;
+    iibb= parseFloat(iibb);
     
 
+    if(cantidadLamparas > 5)
+    {
+        document.getElementById("txtIdprecioDescuento").value = precioPorCantidad* 50/100;
+    }
+    else 
+    {
+        if(cantidadLamparas == 5)
+        {
+            if(marca == "ArgentinaLuz")
+            {
+                document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad *40/100;
+            }
+            else
+            {
+                if(marca != "ArgentinaLuz")
+                {
+                    document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad * 30/100;
+                }
+            }
+        }
+        else
+        {
+            if(cantidadLamparas == 4)
+            {
+                if(marca == "ArgentinaLuz" || marca== "FelipeLamparas")
+                {
+                    document.getElementById("txtIdprecioDescuento").value = precioPorCantidad- precioPorCantidad * 25/100;
+                }
+                else
+                {
+                    document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad * 20/100;
+                }
+            }
+            else
+            {
+                if(cantidadLamparas == 3)
+                {
+                    if(marca == "ArgentinaLuz")
+                    {
+                        document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad * 15/100;
+                    }
+                    else
+                    {
+                        if(marca == "FelipeLamparas")
+                        {
+                            document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad * 10/100;
+                        }
+                        else
+                        {
+                            if(marca != "ArgentinaLuz" || marca != "FelipeLamparas")
+                            {
+                                document.getElementById("txtIdprecioDescuento").value = precioPorCantidad - precioPorCantidad * 5/100;
+                            }
 
+                        }
+                    }
+                }
+                 else
+                {
+                    document.getElementById("txtIdprecioDescuento").value =precioPorCantidad;
+                }
+            }
+        
+        }
+    
+    }
 
 
 

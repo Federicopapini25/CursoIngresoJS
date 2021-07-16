@@ -1,5 +1,10 @@
 /*PAPINI FEDERICO NAHUEL DIV H:
-IF EJERCICIO 07: */
+IF EJERCICIO 07:
+
+Al ingresar una edad menor a 18 años y un estado civil distinto
+a "Soltero", mostrar el siguiente mensaje: 'Es muy pequeño para NO ser soltero.'
+*/
+
 function mostrar()
 {
 	let edadIngresada;
