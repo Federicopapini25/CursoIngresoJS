@@ -1,5 +1,5 @@
 /*PAPINI FEDERICO NAHUEL DIV H
-TRABAJO PRACTICO 4 (IF/SWITCH):
+TRABAJO PRACTICO 4 (IF):
 
 4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
@@ -27,22 +27,142 @@ function CalcularPrecio ()
 {
     let precioUnitario;
     let marca;
+    let cantidad;
+    let descuento;
+    let descuentoFinal;
+    let iibb;
+    let precioConDescuento;
+    let porcentajeIIBB;
+    let impuestoAbonado;
+
+
+    precioUnitario = 35;
+    precioUnitario = parseFloat(precioUnitario);
+    porcentajeIIBB = 0.10;
+    porcentajeIIBB = parseFloat(porcentajeIIBB);
+    marca = document.getElementById("Marca").value;
+    cantidad = document.getElementById("txtIdCantidad").value;
+    cantidad = parseInt(cantidad);
+    precioPorCantidad = precioUnitario * cantidad;
+    document.getElementById("txtIdprecioDescuento");
+    
+
+    
+    
+
+    if (cantidad > 5)
+    {
+        descuento = 50/100;
+        
+    }
+    else
+    {
+        if(cantidad == 5)
+        {
+            if(marca == "ArgentinaLuz")
+            {
+                descuento = 40/100;
+            }
+            else
+            {
+                descuento = 30/100;
+            }
+        }
+        else
+        {
+            if(cantidad == 4)
+            {
+                if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+                {
+                    descuento = 25/100;
+                }
+                else
+                {
+                    descuento = 20/100;
+                }
+            }
+            else
+            {
+                if(cantidad == 3)
+                {
+                    if(marca == "ArgentinaLuz")
+                    {
+                        descuento =15/100;
+                    }
+                    else
+                    {
+                        if(marca == "FelipeLamparas")
+                        {
+                            descuento = 10/100;
+                        }
+                        else
+                        {
+                            descuento =5/100;
+                        }
+                    }
+                }
+                else
+                {
+                    descuento =0;
+                }
+            }
+    
+   
+        }
+    }
+
+    precioConDescuento = precioUnitario - (precioUnitario * descuento);
+    descuentoFinal = precioConDescuento * cantidad;
+    document.getElementById("txtIdprecioDescuento").value= descuentoFinal; 
+
+if(descuentoFinal > 119)
+{
+    iibb = descuentoFinal + (descuentoFinal* porcentajeIIBB);
+    
+    document.getElementById("txtIdprecioDescuento").value= iibb;
+    impuestoAbonado =  iibb - descuentoFinal;
+    alert("IIBB: Usted pago " + impuestoAbonado + " de ingresos brutos");
+}
+
+
+
+
+
+
+
+
+
+
+
+//txtIdCantidad
+//txtIdprecioDescuento
+//Marca
+
+
+
+
+
+ /*   let precioUnitario;
+    let marca;
     let cantidadLamparas;
     let descuentoFinal;
     let porcentajeIIBB;
     let iibb;
     let precioPorCantidad;
+    let descuentoFinalValor;
+
 
     precioUnitario= 35;
     precioUnitario=parseInt(precioUnitario);
     marca= document.getElementById("Marca").value;
     cantidadLamparas=document.getElementById("txtIdCantidad").value;
     precioPorCantidad= cantidadLamparas*precioUnitario;
-    descuentoFinal= document.getElementById("txtIdprecioDescuento").value ;
-    descuentoFinal=parseFloat(descuentoFinal);
-    porcentajeIIBB=descuentoFinal -(descuentoFinal* 10/100);
+    descuentoFinal= document.getElementById("txtIdprecioDescuento") ;
+    descuentoFinalValor=parseFloat(descuentoFinal.value);
+    
+    porcentajeIIBB=descuentoFinalValor -(descuentoFinalValor* 10/100);
     porcentajeIIBB=parseFloat(porcentajeIIBB);
-    iibb = descuentoFinal + porcentajeIIBB;
+    iibb = descuentoFinalValor + porcentajeIIBB;
     iibb= parseFloat(iibb);
     
 
@@ -110,10 +230,12 @@ function CalcularPrecio ()
             }
         
         }
-    
+        descuentoPorCantidad = precioPorCantidad * porcentajeDeDescuento/100;
+        descuentoFinal.value = precioPorCantidad - descuentoPorCantidad + iibb;
+
     }
 
-
+   */ 
 
 
 
